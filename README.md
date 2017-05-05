@@ -11,5 +11,5 @@ If you are a Linux user, you may want to run `sudo` command, or else you might w
 -- char * GetExecutableDirectory(char * path); // Gets the directory where the executable is stored <br>
 -- char * GetExecutableName(char * exec_name); // Gets the executable name <br>
 
-## Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)]
+## Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 Contributions are indeed greatly appreciated and needed. Currently, I have no access to MAC Systems, Solaris, and BSD-like system. It's hard shooting the errors in the dark and in need of contributions.
