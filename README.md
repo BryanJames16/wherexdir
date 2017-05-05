@@ -17,15 +17,13 @@ If you are a Linux user, you may want to run `sudo` command, or else you might w
 ## Issues
 Project is in initial stage. There are no support for MAC Systems, Solaris, BSD-like systems, and some of linux based systems. Each of these files are needed to be tested on different environment and platforms.
 
-## Currently Supported Platforms
+## Target Platforms
 - Windows
 - Linux
 - FreeBSD & DragonFly
 - NetBSD
 - OpenBSD
 - Android
-
-## Pending Platform(s)
 - Mac
 
 --------------------------------------------------------------------------------

@@ -79,7 +79,7 @@ GetExecutableDirectory(char * path)
 		__SpliceString(path, 1);
 	#elif __APPLE__
 		char trace[PATH_MAX] = {"\0"};
-		readlink("/proc/self/exe", trace, PATH_MAX);
+		_NSGetExecutablePath(trace, PATH_MAX);
 		stpcpy(path, trace);
 		__SpliceString(path, 1);
 	#elif defined(__FreeBSD__) || (__DragonFly__)
@@ -150,7 +150,10 @@ GetExecutableName(char * exec_name)
 		__ChangeToForward(exec_name);
 		__SpliceString(exec_name, 2);
 	#elif __APPLE__
-		
+		char trace[PATH_MAX] = {"\0"};
+		_NSGetExecutablePath(trace, PATH_MAX);
+		stpcpy(path, trace);
+		__SpliceString(path, 2);
 	#elif defined(__FreeBSD__) || (__DragonFly__)
 		char trace[PATH_MAX] = {"\0"};
 		// wcs_readlink
@@ -184,7 +187,10 @@ WGetExecutableName(wchar_t * exec_name)
 		__WChangeToForward(exec_name);
 		__WSpliceString(exec_name, 2);
 	#elif __APPLE__
-		
+		wchar_t trace[PATH_MAX] = {L"\0"};
+		readlink("/proc/self/exe", trace, PATH_MAX);
+		wcscpy(path, trace);
+		__WSpliceString(path, 2);
 	#elif defined(__FreeBSD__) || (__DragonFly__)
 		wchar_t trace[PATH_MAX] = {L"\0"};
 		// wcs_readlink
