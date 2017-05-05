@@ -21,6 +21,7 @@ Project is in initial stage. There are no support for MAC Systems, Solaris, BSD-
 - Windows
 - Linux
 - FreeBSD & DragonFly
+- Solaris
 - NetBSD
 - OpenBSD
 - Android
@@ -33,3 +34,6 @@ Contributions are indeed greatly appreciated and needed. Currently, I have no ac
 
 ## Documentation [![Inline docs](http://inch-ci.org/github/BryanJames16/wherexdir.svg?branch=master&style=shields)](http://inch-ci.org/github/BryanJames16/wherexdir)
 No documentations yet...
+
+## License
+Released in Public Domain
