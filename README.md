@@ -14,6 +14,12 @@ If you are a Linux user, you may want to run `sudo` command, or else you might w
 ## Issues
 Project is in initial stage. There are no support for MAC Systems, Solaris, BSD-like systems, and some of linux based systems.
 
+## Currently Supported Platforms
+- Windows
+- Linux
+- FreeBSD & DragonFly
+- NetBSD
+
 --------------------------------------------------------------------------------
 
 ## Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/BryanJames16/wherexdir/issues)
