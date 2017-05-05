@@ -33,7 +33,7 @@ Project is in initial stage. There are no support for MAC Systems, Solaris, BSD-
 Contributions are indeed greatly appreciated and needed. Currently, I have no access to Mac Systems, Solaris, and BSD-like system. It's hard shooting the errors in the dark and in need of contributions.
 
 ## Documentation [![Inline docs](http://inch-ci.org/github/BryanJames16/wherexdir.svg?branch=master&style=shields)](http://inch-ci.org/github/BryanJames16/wherexdir)
-No documentations yet...
+You already saw <a name="Usage">it</a>.
 
 ## License
 Released in Public Domain
