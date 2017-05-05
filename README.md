@@ -8,8 +8,12 @@ A small header file used for searching executable directory. This library aims t
 ## Usage
 If you are a Linux user, you may want to run `sudo` command, or else you might want to use `argv[0]` <br>
 - `char * GetCurrentWorkingPath(char * path);`  Gets the working directory where the application is called 
-- `char * GetExecutableDirectory(char * path);` // Gets the directory where the executable is stored 
-- `char * GetExecutableName(char * exec_name);` // Gets the executable name 
+- `char * GetExecutableDirectory(char * path);` Gets the directory where the executable is stored 
+- `char * GetExecutableName(char * exec_name);` Gets the executable name 
+
+- `wchar_t * WGetCurrentWorkingPath(char * path);`  Gets the working directory where the application is called (Wide Char)
+- `wchar_t * WGetExecutableDirectory(char * path);` Gets the directory where the executable is stored (Wide Char)
+- `wchar_t * WGetExecutableName(char * exec_name);` Gets the executable name (Wide Char)
 
 ## Issues
 Project is in initial stage. There are no support for MAC Systems, Solaris, BSD-like systems, and some of linux based systems.
