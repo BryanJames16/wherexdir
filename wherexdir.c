@@ -8,13 +8,25 @@ char *
 GetCurrentWorkingPath(char * path)
 {
 	#if defined (_WIN32) || defined (_WIN64)
-		
+		char working_path[PATH_MAX] = {"\0"};
+		_getcwd(working_path, PATH_MAX);
+		strcpy(path, working_path);
+		__ChangeToForward(path);
 	#elif __APPLE__
-		
-	#elif __linux__
-		
-	#elif __unix__
-		
+		char working_path[PATH_MAX] = {"\0"};
+		getcwd(working_path, PATH_MAX);
+		strcpy(path, working_path);
+		__ChangeToForward(path);
+	#elif defined(__linux__) || defined (__unix__)
+		char working_path[PATH_MAX] = {"\0"};
+		getcwd(working_path, PATH_MAX);
+		strcpy(path, working_path);
+		__ChangeToForward(path);
+	#elif defined(__FreeBSD__)
+		char working_path[PATH_MAX] = {"\0"};
+		getcwd(working_path, PATH_MAX);
+		strcpy(path, working_path);
+		__ChangeToForward(path);
 	#endif
 	
 	return (path);
@@ -33,14 +45,17 @@ GetExecutableDirectory(char * path)
 		char trace[PATH_MAX] = {"\0"};
 		readlink("/proc/curproc/file", trace, PATH_MAX);
 		stpcpy(path, trace);
+		__SpliceString(path, 1);
 	#elif defined(__NetBSD__)
 		char trace[PATH_MAX] = {"\0"};
 		readlink("/proc/curproc/exe", trace, PATH_MAX);
 		stpcpy(path, trace);
+		__SpliceString(path, 1);
 	#elif defined(__linux__) || defined (__unix__)
 		char trace[PATH_MAX] = {"\0"};
 		readlink("/proc/self/exe", trace, PATH_MAX);
 		stpcpy(path, trace);
+		__SpliceString(path, 1);
 	#elif defined(__sun)
 		path = getexecname();
 		__ChangeToForward(path);
@@ -55,16 +70,29 @@ GetExecutableName(char * exec_name)
 {
 	#if defined (_WIN32) || defined (_WIN64)
 		GetModuleFileName(NULL, exec_name, PATH_MAX);
-		__ChangeToForward(path);
-		__SpliceString(path, 2);
+		__ChangeToForward(exec_name);
+		__SpliceString(exec_name, 2);
 	#elif __APPLE__
 		
-	#elif defined(__linux__) || defined (__unix__)
-		
-	#elif defined(__sun)
-		path = getexecname();
-		__ChangeToForward(path);
+	#elif defined(__FreeBSD__) || (__DragonFly__)
+		char trace[PATH_MAX] = {"\0"};
+		readlink("/proc/curproc/file", trace, PATH_MAX);
+		stpcpy(path, trace);
 		__SpliceString(path, 2);
+	#elif defined(__NetBSD__)
+		char trace[PATH_MAX] = {"\0"};
+		readlink("/proc/curproc/exe", trace, PATH_MAX);
+		stpcpy(path, trace);
+		__SpliceString(path, 2);
+	#elif defined(__linux__) || defined (__unix__)
+		char trace[PATH_MAX] = {"\0"};
+		readlink("/proc/self/exe", trace, PATH_MAX);
+		stpcpy(path, trace);
+		__SpliceString(path, 2);
+	#elif defined(__sun)
+		exec_name = getexecname();
+		__ChangeToForward(exec_name);
+		__SpliceString(exec_name, 2);
 	#endif
 	
 	return (exec_name);
