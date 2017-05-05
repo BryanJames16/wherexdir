@@ -289,7 +289,6 @@ __SpliceString(char * string, unsigned short int part)
 			spliceString[occurence + 1] = '\0';
 		}
 		else {
-			occurence++;
 			strncpy(spliceString, spliceString + occurence, length);
 		}
 		
@@ -323,7 +322,6 @@ __WSpliceString(wchar_t * string, unsigned short int part)
 			spliceString[occurence + 1] = L'\0';
 		}
 		else {
-			occurence++;
 			wcsncpy(spliceString, spliceString + occurence, length);
 		}
 		
