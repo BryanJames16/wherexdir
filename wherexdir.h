@@ -41,7 +41,7 @@ char * GetCurrentWorkingPath(char * path);
 
 char * GetExecutableDirectory(char * path);
 
-char * GetExecutableName();
+char * GetExecutableName(char * exec_name);
 
 //////////////////////////////////////////////
 /**
