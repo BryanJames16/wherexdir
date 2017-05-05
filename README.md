@@ -15,6 +15,7 @@ If you are a Linux user, you may want to run `sudo` command, or else you might w
 - `wchar_t * WGetExecutableName(char * exec_name);` Gets the executable name (Wide Char)
 
 Example:
+
 	char path[PATH_MAX];
 	
 	GetCurrentWorkingPath(path);
@@ -25,6 +26,7 @@ Example:
 	printf ("Name: %s\n", path);
 
 Outputs:
+
 	Calling Directory: C:/Development/Sandbox
 	Executable Directory: C:/Development
 	Name: sample.exe
