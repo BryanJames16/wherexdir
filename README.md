@@ -33,7 +33,13 @@ Project is in initial stage. There are no support for MAC Systems, Solaris, BSD-
 Contributions are indeed greatly appreciated and needed. Currently, I have no access to Mac Systems, Solaris, and BSD-like system. It's hard shooting the errors in the dark and in need of contributions.
 
 ## Documentation [![Inline docs](http://inch-ci.org/github/BryanJames16/wherexdir.svg?branch=master&style=shields)](http://inch-ci.org/github/BryanJames16/wherexdir)
-You already saw <a name="Usage">it</a>.
+You already saw it:
+- `char * GetCurrentWorkingPath(char * path);`  Gets the working directory where the application is called 
+- `char * GetExecutableDirectory(char * path);` Gets the directory where the executable is stored 
+- `char * GetExecutableName(char * exec_name);` Gets the executable name 
+- `wchar_t * WGetCurrentWorkingPath(char * path);`  Gets the working directory where the application is called (Wide Char)
+- `wchar_t * WGetExecutableDirectory(char * path);` Gets the directory where the executable is stored (Wide Char)
+- `wchar_t * WGetExecutableName(char * exec_name);` Gets the executable name (Wide Char)
 
 ## License
 Released in Public Domain
