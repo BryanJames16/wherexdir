@@ -15,16 +15,17 @@ If you are a Linux user, you may want to run `sudo` command, or else you might w
 - `wchar_t * WGetExecutableName(char * exec_name);` Gets the executable name (Wide Char)
 
 ## Issues
-Project is in initial stage. There are no support for MAC Systems, Solaris, BSD-like systems, and some of linux based systems.
+Project is in initial stage. There are no support for MAC Systems, Solaris, BSD-like systems, and some of linux based systems. Each of these files are needed to be tested on different environment and platforms.
 
 ## Currently Supported Platforms
 - Windows
 - Linux
 - FreeBSD & DragonFly
 - NetBSD
-
-## Pending Platforms
+- OpenBSD
 - Android
+
+## Pending Platform(s)
 - Mac
 
 --------------------------------------------------------------------------------

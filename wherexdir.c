@@ -78,7 +78,10 @@ GetExecutableDirectory(char * path)
 		__ChangeToForward(path);
 		__SpliceString(path, 1);
 	#elif __APPLE__
-		
+		char trace[PATH_MAX] = {"\0"};
+		readlink("/proc/self/exe", trace, PATH_MAX);
+		stpcpy(path, trace);
+		__SpliceString(path, 1);
 	#elif defined(__FreeBSD__) || (__DragonFly__)
 		char trace[PATH_MAX] = {"\0"};
 		readlink("/proc/curproc/file", trace, PATH_MAX);
@@ -111,7 +114,10 @@ WGetExecutableDirectory(wchar_t * path)
 		__WChangeToForward(path);
 		__WSpliceString(path, 1);
 	#elif __APPLE__
-		
+		wchar_t trace[PATH_MAX] = {"\0"};
+		readlink("/proc/self/exe", trace, PATH_MAX);
+		wcscpy(path, trace);
+		__WSpliceString(path, 1);
 	#elif defined(__FreeBSD__) || (__DragonFly__)
 		wchar_t trace[PATH_MAX] = {L"\0"};
 		readlink("/proc/curproc/file", trace, PATH_MAX);
@@ -165,6 +171,40 @@ GetExecutableName(char * exec_name)
 		exec_name = getexecname();
 		__ChangeToForward(exec_name);
 		__SpliceString(exec_name, 2);
+	#endif
+	
+	return (exec_name);
+}
+
+wchar_t * 
+WGetExecutableName(wchar_t * exec_name)
+{
+	#if defined (_WIN32) || defined (_WIN64)
+		GetModuleFileNameW(NULL, exec_name, PATH_MAX);
+		__WChangeToForward(exec_name);
+		__WSpliceString(exec_name, 2);
+	#elif __APPLE__
+		
+	#elif defined(__FreeBSD__) || (__DragonFly__)
+		wchar_t trace[PATH_MAX] = {L"\0"};
+		// wcs_readlink
+		readlink("/proc/curproc/file", trace, PATH_MAX);
+		wcscpy(path, trace);
+		__WSpliceString(path, 2);
+	#elif defined(__NetBSD__)
+		wchar_t trace[PATH_MAX] = {L"\0"};
+		readlink("/proc/curproc/exe", trace, PATH_MAX);
+		wcscpy(path, trace);
+		__WSpliceString(path, 2);
+	#elif defined(__linux__) || defined (__unix__)
+		wchar_t trace[PATH_MAX] = {L"\0"};
+		readlink("/proc/self/exe", trace, PATH_MAX);
+		wcscpy(path, trace);
+		__WSpliceString(path, 2);
+	#elif defined(__sun)
+		exec_name = getexecname();
+		__WChangeToForward(exec_name);
+		__WSpliceString(exec_name, 2);
 	#endif
 	
 	return (exec_name);
