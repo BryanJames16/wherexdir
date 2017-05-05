@@ -10,7 +10,6 @@ If you are a Linux user, you may want to run `sudo` command, or else you might w
 - `char * GetCurrentWorkingPath(char * path);`  Gets the working directory where the application is called 
 - `char * GetExecutableDirectory(char * path);` Gets the directory where the executable is stored 
 - `char * GetExecutableName(char * exec_name);` Gets the executable name 
-
 - `wchar_t * WGetCurrentWorkingPath(char * path);`  Gets the working directory where the application is called (Wide Char)
 - `wchar_t * WGetExecutableDirectory(char * path);` Gets the directory where the executable is stored (Wide Char)
 - `wchar_t * WGetExecutableName(char * exec_name);` Gets the executable name (Wide Char)
@@ -23,6 +22,10 @@ Project is in initial stage. There are no support for MAC Systems, Solaris, BSD-
 - Linux
 - FreeBSD & DragonFly
 - NetBSD
+
+## Pending Platforms
+- Android
+- Mac
 
 --------------------------------------------------------------------------------
 
