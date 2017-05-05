@@ -18,12 +18,16 @@ extern "C" {
  */
 #if defined (_WIN32) || defined (_WIN64)
 	#include <windows.h>
+	#include <direct.h>
 #elif defined(__APPLE__)
 	#include <mach-o/dyld.h>
+	#include <unistd.h>
 #elif defined(__linux__) || defined(__unix__)
 	#include <unistd.h>
 #elif defined(__sun)
 	#include <stdlib.h>
+#else 
+	#include <unistd.h>
 #endif
 
 

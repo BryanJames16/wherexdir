@@ -22,7 +22,12 @@ GetCurrentWorkingPath(char * path)
 		getcwd(working_path, PATH_MAX);
 		strcpy(path, working_path);
 		__ChangeToForward(path);
-	#elif defined(__FreeBSD__)
+	#elif defined(__FreeBSD__) || definded(__DragonFly__)
+		char working_path[PATH_MAX] = {"\0"};
+		getcwd(working_path, PATH_MAX);
+		strcpy(path, working_path);
+		__ChangeToForward(path);
+	#elif defined(__NetBSD__)
 		char working_path[PATH_MAX] = {"\0"};
 		getcwd(working_path, PATH_MAX);
 		strcpy(path, working_path);
