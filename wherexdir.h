@@ -9,9 +9,8 @@ extern "C" {
  * 	Standard Libraries
  */
 #include <limits.h>
-#include <stdio.h>
 #include <string.h>
-
+#include <wchar.h>
 
 /**
  *  Non-Standard Libraries 
@@ -43,9 +42,32 @@ extern "C" {
  */
 char * GetCurrentWorkingPath(char * path);
 
+/**
+ *  Get the current working directory of the 
+ *  calling location (Wide Character Support)
+ */
+wchar_t * WGetCurrentWorkingPath(wchar_t * path);
+
+/**
+ *  Get the location where executable is stored
+ */
 char * GetExecutableDirectory(char * path);
 
+/**
+ *  Get the location where executable is stored
+ *  (Wide Character Support)
+ */
+wchar_t * WGetExecutableDirectory(wchar_t * path);
+
+/**
+ *  Get the executable name 
+ */
 char * GetExecutableName(char * exec_name);
+
+/**
+ *  Get the executable name (Wide Character Support)
+ */
+wchar_t * WGetExecutableName(wchar_t * exec_name);
 
 //////////////////////////////////////////////
 /**
@@ -54,7 +76,11 @@ char * GetExecutableName(char * exec_name);
 //////////////////////////////////////////////
 char * __ChangeToForward(char * path);
 
+wchar_t * __WChangeToForward(wchar_t * path);
+
 char * __SpliceString(char * string, unsigned short int part);
+
+wchar_t * __WSpliceString(wchar_t * string, unsigned short int part);
 
 #ifdef __cplusplus
 }
