@@ -16,7 +16,7 @@ Project is in initial stage. There are no support for MAC Systems, Solaris, BSD-
 
 --------------------------------------------------------------------------------
 
-## Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+## Contributing [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/BryanJames16/wherexdir/issues)
 Contributions are indeed greatly appreciated and needed. Currently, I have no access to MAC Systems, Solaris, and BSD-like system. It's hard shooting the errors in the dark and in need of contributions.
 
 ## Documentation [![Inline docs](http://inch-ci.org/github/BryanJames16/wherexdir.svg?branch=master&style=shields)](http://inch-ci.org/github/BryanJames16/wherexdir)
