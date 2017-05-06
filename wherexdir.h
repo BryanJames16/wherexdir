@@ -36,9 +36,9 @@ extern "C" {
 /**
  * 	Standard Libraries
  */
-#include <limits.h>
-#include <string.h>
-#include <wchar.h>
+#include <limits.h>		// <-- PATH_MAX Definition
+#include <string.h>		// <-- String Handling
+#include <wchar.h>		// <-- Wide Character Support
 
 /**
  *  Non-Standard Libraries 
@@ -51,6 +51,7 @@ extern "C" {
 	#include <unistd.h>
 #elif defined(__linux__) || defined(__unix__)
 	#include <unistd.h>
+	#include <stdlib.h>
 #elif defined(__sun)
 	#include <stdlib.h>
 #else 
