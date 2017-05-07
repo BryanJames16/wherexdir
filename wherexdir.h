@@ -27,7 +27,7 @@
  */
 
 #ifndef __WHEREXDIR_H
-#define __WHEREXDIR_H
+#define __WHEREXDIR_H 1
 
 #ifdef __cplusplus
 extern "C" {
@@ -44,18 +44,17 @@ extern "C" {
  *  Non-Standard Libraries 
  */
 #if defined (_WIN32) || defined (_WIN64)
-	#include <windows.h>
-	#include <direct.h>
+	#include <windows.h> 		// <-- Functions: GetModuleFileName(), GetModuleFileNameW()
+	#include <direct.h>			// <-- Functions: _getcwd(), _wgetcwd()
 #elif defined(__APPLE__)
-	#include <mach-o/dyld.h>
-	#include <unistd.h>
+	#include <mach-o/dyld.h> 	// <-- Function: _NSGetExecutablePath() 
+	#include <unistd.h>			// <-- Function: readlink()
 #elif defined(__linux__) || defined(__unix__)
-	#include <unistd.h>
-	#include <stdlib.h>
+	#include <unistd.h> 		// <-- Function: readlink()
 #elif defined(__sun)
-	#include <stdlib.h>
+	#include <stdlib.h> 		// <-- Function: getexecname()
 #else 
-	#include <unistd.h>
+	#include <unistd.h> 
 #endif
 
 
