@@ -48,13 +48,15 @@ extern "C" {
 	#include <direct.h>			// <-- Functions: _getcwd(), _wgetcwd()
 #elif defined(__APPLE__)
 	#include <mach-o/dyld.h> 	// <-- Function: _NSGetExecutablePath() 
-	#include <unistd.h>			// <-- Function: readlink()
+	#include <unistd.h> 		// <-- Function: readlink()
 #elif defined(__linux__) || defined(__unix__)
 	#include <unistd.h> 		// <-- Function: readlink()
+	#include <stdlib.h> 		// <-- Funtion: wcstombs(), mbstowcs()
 #elif defined(__sun)
 	#include <stdlib.h> 		// <-- Function: getexecname()
 #else 
 	#include <unistd.h> 
+	#include <stdlib.h> 
 #endif
 
 
