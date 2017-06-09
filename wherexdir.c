@@ -53,7 +53,7 @@ GetCurrentWorkingPath(char * path)
 		getcwd(working_path, PATH_MAX);
 		strcpy(path, working_path);
 		__ChangeToForward(path);
-	#elif defined(__FreeBSD__) || definded(__DragonFly__)
+	#elif defined(__FreeBSD__) || defined(__DragonFly__)
 		char working_path[PATH_MAX] = {"\0"};
 		getcwd(working_path, PATH_MAX);
 		strcpy(path, working_path);
@@ -92,7 +92,7 @@ WGetCurrentWorkingPath(wchar_t * path)
 		mbstowcs(working_path, m_working_path, PATH_MAX);
 		wcscpy(path, working_path);
 		__WChangeToForward(path);
-	#elif defined(__FreeBSD__) || definded(__DragonFly__)
+	#elif defined(__FreeBSD__) || defined(__DragonFly__)
 		wchar_t working_path[PATH_MAX] = {L"\0"};
 		char m_working_path[PATH_MAX] = {"\0"};
 		wcstombs(m_working_path, working_path, PATH_MAX);
